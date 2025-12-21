@@ -1,0 +1,11 @@
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+torch
+stable-baselines3[extra]
+gymnasium
+shimmy>=0.2.1
+tqdm
+jupyter
