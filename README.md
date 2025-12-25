@@ -1,5 +1,15 @@
 # NetSense: Autonomous Network Intrusion Detection & Response System
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python" />
+  <img src="https://img.shields.io/badge/FastAPI-0.104.1-green?logo=fastapi" />
+  <img src="https://img.shields.io/badge/PyTorch-2.0+-ee4c2c?logo=pytorch" />
+  <img src="https://img.shields.io/badge/Stable%20Baselines3-2.1.0-00599c?logo=github" />
+  <img src="https://img.shields.io/badge/Scikit--Learn-1.3+-f7931e?logo=scikit-learn" />
+  <img src="https://img.shields.io/badge/uvicorn-0.24.0-222?logo=uvicorn" />
+  <img src="https://img.shields.io/badge/License-Academic-lightgrey" />
+</p>
+
 NetSense is a modern, AI-powered Intrusion Detection and Response System (IDRS) designed to monitor network traffic, detect malicious activity, and autonomously respond to threats in real time. It features a web dashboard for live monitoring and control, and leverages deep learning and reinforcement learning for intelligent decision-making.
 
 ---
