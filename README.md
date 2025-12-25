@@ -17,8 +17,8 @@ NetSense is a modern, AI-powered Intrusion Detection and Response System (IDRS) 
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repo-url>
-cd <project-folder>
+git clone https://github.com/TAS-8/Autonomous-Network-IDRS.git
+cd Autonomous-Network-IDRS
 ```
 
 ### 2. Install Dependencies
