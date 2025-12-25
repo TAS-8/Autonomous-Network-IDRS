@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NetSense Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <h1 class="app-title">NetSense</h1>
+      <div class="top-controls">
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle dark/light mode">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <span class="version">v1.0</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="stats-grid">
+      <div class="card">
+        <div class="card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Total Packets</div>
+          <div id="packets" class="card-value">--</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Detected Attacks</div>
+          <div id="attacks" class="card-value">--</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Accuracy</div>
+          <div id="accuracy" class="card-value">--</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Throughput</div>
+          <div id="throughput" class="card-value">--</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart-card">
+      <div class="chart-header">Actions (last minute)</div>
+      <canvas id="trafficChart" width="800" height="240"></canvas>
+    </section>
+
+    <section class="lower-panel">
+      <div class="recent-table card-panel">
+        <div class="panel-title">Recent Items</div>
+        <table class="table">
+          <thead><tr><th>Time</th><th>Source</th><th>Event</th><th>Score</th></tr></thead>
+          <tbody id="recentBody"></tbody>
+        </table>
+      </div>
+
+      <div class="control-panel card-panel">
+        <div class="panel-title">Control</div>
+        <div class="status" id="status">Stopped</div>
+        <div class="controls">
+          <button id="startBtn" class="btn positive">Start</button>
+          <button id="stopBtn" class="btn negative">Stop</button>
+          <button id="injectBtn" class="btn ghost">Inject Test</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
